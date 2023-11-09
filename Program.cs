@@ -85,9 +85,7 @@ namespace programowanie_obiektowe3
             Address adres_osoba = new("Poznań", "Długa", "1", "61-000");
             Console.WriteLine("Address adres_osoba:");
             foreach (PropertyInfo propertyInfo in typeof(Address).GetProperties())
-            {
                 Console.WriteLine(propertyInfo.Name + " => " + propertyInfo.GetValue(adres_osoba));
-            }
 
             Console.WriteLine();
 
@@ -97,13 +95,10 @@ namespace programowanie_obiektowe3
             {
                 if (propertyInfo.Name != "Address")
                     Console.WriteLine(propertyInfo.Name + " => " + propertyInfo.GetValue(osoba));
+
                 else
-                {
                     foreach (PropertyInfo propertyInfoAddress in typeof(Address).GetProperties())
-                    {
                         Console.WriteLine(propertyInfo.Name + "." + propertyInfoAddress.Name + " => " + propertyInfoAddress.GetValue(osoba.Address));
-                    }
-                }
             }
 
             Console.WriteLine();
@@ -115,13 +110,10 @@ namespace programowanie_obiektowe3
             {
                 if (propertyInfo.Name != "Address")
                     Console.WriteLine(propertyInfo.Name + " => " + propertyInfo.GetValue(student));
+
                 else
-                {
                     foreach (PropertyInfo propertyInfoAddress in typeof(Address).GetProperties())
-                    {
                         Console.WriteLine(propertyInfo.Name + "." + propertyInfoAddress.Name + " => " + propertyInfoAddress.GetValue(student.Address));
-                    }
-                }
             }
             
             Console.WriteLine();
@@ -134,18 +126,14 @@ namespace programowanie_obiektowe3
             {
                 if (propertyInfo.Name == "Address")
                     foreach (PropertyInfo propertyInfoAddress in typeof(Address).GetProperties())
-                    {
                         Console.WriteLine(propertyInfo.Name + "." + propertyInfoAddress.Name + " => " + propertyInfoAddress.GetValue(teacher.Address));
-                    }
+
                 else if (propertyInfo.Name == "Subjects")
                     foreach (string subject in teacher.Subjects)
-                    {
                         Console.WriteLine(propertyInfo.Name + " => " + subject);
-                    }
+                
                 else
-                {
                     Console.WriteLine(propertyInfo.Name + " => " + propertyInfo.GetValue(teacher));
-                }
             }
 
         }
