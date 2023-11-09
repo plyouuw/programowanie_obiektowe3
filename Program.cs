@@ -143,7 +143,7 @@ namespace programowanie_obiektowe3
                         Console.WriteLine(propertyInfo.Name + " => " + subject);
                     }
                 else
-                {
+        {
                     Console.WriteLine(propertyInfo.Name + " => " + propertyInfo.GetValue(teacher));
                 }
             }
